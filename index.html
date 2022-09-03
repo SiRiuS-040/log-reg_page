@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../common/variables.css">
+    <link rel="stylesheet" href="../../common/components.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="page-body">
+    <header class="authorization-header disabled">
+        <a href="https://at-work.pro/"
+            class="registration-page__navigation-link-main-page registration-page__navigation-link-main-page--header">
+            <img src="./img/AT-Work-logo.svg" alt="" width="124" height="24"
+                class="authorization-page__logo authorization-page__logo">
+        </a>
+        <button class="registration-page__button-go-to-auth registration-page__button-go-to-auth--header">У меня есть
+            аккаунт</button>
+    </header>
+    <main class="main">
+        <h1 class="visually-hidden">Страница авторизации, регистрации, восстановления пароля</h1>
+        <section class="authorization-page">
+            <h2 class="visually-hidden">Страница авторизации</h2>
+            <div class="authorization-page__wrapper">
+                <div class="authorization-page__logo-wrapper">
+                    <a href="#" class="authorization-page__navigation-link-go-back disabled"></a>
+                    <a href="https://at-work.pro/">
+                        <img src="./img/AT-Work-logo.svg" alt="" width="124" height="24"
+                            class="authorization-page__logo">
+                    </a>
+                </div>
+                <div class="authorization-page__type-title-wrapper">
+                    <h2 class="authorization-page__title email-authorization">Войдите по почте</h2>
+                    <h2 class="authorization-page__title phone-authorization disabled">Войдите по номеру</h2>
+                </div>
+                <h2 class="authorization-page__title password-authorization disabled">Подтвердите вход</h2>
+                <div class="authorization-page__navigation navigation">
+                    <div class="navigation__list">
+                        <button id="email-authorization" class="navigation__nav-button navigation__nav-button--active">
+                            Почта
+                        </button>
+                        <span class="navigation__nav-slider"></span>
+                        <button id="phone-authorization" class="navigation__nav-button">
+                            Телефон
+                        </button>
+                    </div>
+                </div>
+                <section class="authorization email-authorization email-authorization-wrapper">
+                    <label class="authorization__type-label email-input">
+                        <input type="email" name="email-input" id="email-input"
+                            class="authorization__type-item-input authorization__type-item-input--email"
+                            placeholder="Электронная почта">
+                        <button
+                            class="authorization__input-button authorization__input-button--clear-input input-empty"></button>
+                    </label>
+                </section>
+                <section class="authorization phone-authorization phone-authorization-wrapper disabled">
+                    <label class="authorization__type-label authorization__type-label--phone">
+                        <button class="country-selector__button country-selector__button--russia"></button>
+                        <input type="tel" name="phone-input" id="phone-input"
+                            class="authorization__type-item-input authorization__type-item-input--phone"
+                            placeholder="+7 ___ ___-__-__">
+                    </label>
+                    <div class="phone-authorization__country-selector-wrapper country-selector">
+                        <div class="country-selector__country-list">
+                            <label class="country-selector__item selected" mask-data="+{7} 000 000-00-00"
+                                country-data="russia" placeholder-data="+7 ___ ___-__-__">
+                                <input class="country-selector__radio-input" type="radio" name="country-auth">
+                                <span class="country-selector__radio-icon"></span>
+                                <p class="country-selector__description country-selector__description--russia">Россия
+                                    <span class="country-selector__data">+7</span>
+                                </p>
+                            </label>
+                            <label class="country-selector__item" mask-data="+{375} 00 000-00-00" country-data="belarus"
+                                placeholder-data="+375 __ ___-__-__">
+                                <input class="country-selector__radio-input" type="radio" name="country-auth">
+                                <span class="country-selector__radio-icon"></span>
+                                <p class="country-selector__description country-selector__description--belarus">Беларусь
+                                    <span class="country-selector__data">+375
+                                </p>
+                            </label>
+                            <label class="country-selector__item" mask-data="+{380} 00 000 0000" country-data="ua"
+                                placeholder-data="+380 __ ___ ____">
+                                <input class="country-selector__radio-input" type="radio" name="country-auth">
+                                <span class="country-selector__radio-icon"></span>
+                                <p class="country-selector__description country-selector__description--ua">Украина <span
+                                        class="country-selector__data">+380</p>
+                            </label>
+                            <label class="country-selector__item" mask-data="+{7} 000 000 0000"
+                                country-data="kazakhstan" placeholder-data="+7 ___ ___ ____">
+                                <input class="country-selector__radio-input" type="radio" name="country-auth">
+                                <span class="country-selector__radio-icon"></span>
+                                <p class="country-selector__description country-selector__description--kazakhstan">
+                                    Казахстан <span class="country-selector__data">+7</p>
+                            </label>
+                            <label class="country-selector__item" mask-data="+{998} 00 000 00 00"
+                                country-data="uzbekistan" placeholder-data="+998 __ ___ __ __">
+                                <input class="country-selector__radio-input" type="radio" name="country-auth">
+                                <span class="country-selector__radio-icon"></span>
+                                <p class="country-selector__description country-selector__description--uzbekistan">
+                                    Узбекистан <span class="country-selector__data">+998</p>
+                            </label>
+                            <label class="country-selector__item" mask-data="+{373} 000 00 000" country-data="moldova"
+                                placeholder-data="+373 ___ __ ___">
+                                <input class="country-selector__radio-input" type="radio" name="country-auth">
+                                <span class="country-selector__radio-icon"></span>
+                                <p class="country-selector__description country-selector__description--moldova">Молдова
+                                    <span class="country-selector__data">+373
+                                </p>
+                            </label>
+                            <label class="country-selector__item" mask-data="+{374} 00 000000" country-data="armenia"
+                                placeholder-data="+374 __ ______">
+                                <input class="country-selector__radio-input" type="radio" name="country-auth">
+                                <span class="country-selector__radio-icon"></span>
+                                <p class="country-selector__description country-selector__description--armenia">Армения
+                                    <span class="country-selector__data">+374
+                                </p>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="authorization password-authorization disabled">
+                    <label class="authorization__password-label auth-password">
+                        <input type="password" name="auth-password" id="auth-password"
+                            class="authorization__password-input authorization__password-input--password"
+                            placeholder="Введите пароль" autocomplete="new-password">
+                        <div class="authorization__input-button-wrapper">
+                            <button class="authorization__input-button authorization__input-button--show-pw"></button>
+                        </div>
+                    </label>
+                    <p class="authorization__alert authorization__alert--wrong-pass disabled">Неправильный логин или
+                        пароль
+                    </p>
+                    <p class="authorization__alert authorization__alert--incorrect-pass disabled">Пароль должен
+                        содержать минимум 8 символов
+                    </p>
+                    <button class="authorization__link-password-restore">Забыли пароль?</button>
+                </section>
+                <div class="authorization__button-wrapper">
+                    <button
+                        class="basic-button authorization__button authorization__button--continue">Продолжить</button>
+                    <button
+                        class="basic-button authorization__button authorization__button--enter disabled">Войти</button>
+                </div>
+                <div class="authorization-page__additional-login">
+                    <p class="authorization-page__additional-login-desc">войти с помощью</p>
+                    <div class="authorization-page__additional-login-wrapper">
+                        <img src="./img/login-vk.svg" alt=""
+                            class="authorization-page__additional-login-type authorization-page__additional-login-type--vk"
+                            width="38" height="38">
+                        <img src="./img/login-apple.svg" alt=""
+                            class="authorization-page__additional-login-type authorization-page__additional-login-type--apple"
+                            width="38" height="38">
+                        <img src="./img/login-google.svg" alt=""
+                            class="authorization-page__additional-login-type authorization-page__additional-login-type--google"
+                            width="38" height="38">
+                        <img src="./img/login-yandex.svg" alt=""
+                            class="authorization-page__additional-login-type authorization-page__additional-login-type--yandex"
+                            width="38" height="38">
+                    </div>
+                </div>
+                <button
+                    class="authorization-page__button authorization-page__button-go-to-registration">Зарегистрироваться</button>
+            </div>
+        </section>
+        <section class="registration-restore-page disabled">
+            <section class="registration-restore-page__reg registration-page disabled">
+                <div class="registration-page__wrapper">
+                    <h2 class="visually-hidden">Страница регистрации</h2>
+                    <div class="registration-page__logo-wrapper">
+                        <a href="#" class="registration-page__navigation-link-go-back disabled"></a>
+                        <a href="https://at-work.pro/" class="registration-page__navigation-link-main-page"><img
+                                src="./img/AT-Work-logo.svg" alt="" width="124" height="24"
+                                class="registration-page__logo"></a>
+                    </div>
+                    <div class="registration-page__title-wrapper">
+                        <h2 class="registration-page__title">Создайте аккаунт at-work</h2>
+                    </div>
+                    <section class="registration name-registration name-registration-wrapper">
+                        <label class="registration__label registration__name-label name-input">
+                            <input type="text" name="name-input" id="name-input"
+                                class="registration__input registration__name-item-input registration__name-item-input--name"
+                                placeholder="Имя" maxlength="50">
+                            <button
+                                class="registration__input-button registration__input-button--clear-input input-empty"></button>
+                        </label>
+                        <label class="registration__label registration__name-label name-input">
+                            <input type="text" name="surname-input" id="surname-input"
+                                class="registration__input registration__name-item-input registration__name-item-input--surname"
+                                placeholder="Фамилия" maxlength="50">
+                            <button
+                                class="registration__input-button registration__input-button--clear-input input-empty"></button>
+                        </label>
+                    </section>
+                    <section class="registration phone-registration phone-registration-wrapper d isabled">
+                        <label class="registration__type-label registration__type-label--phone">
+                            <button class="country-selector__button country-selector__button--russia"></button>
+                            <input type="tel" name="reg-phone-input" id="reg-phone-input"
+                                class="registration__type-item-input registration__type-item-input--phone registration__input-phone-mask"
+                                placeholder="+7 ___ ___-__-__">
+                        </label>
+                        <div class="phone-registration__country-selector-wrapper country-selector">
+                            <div class="country-selector__country-list" tabindex="-1">
+                                <label class="country-selector__item selected" mask-data="+{7} 000 000-00-00"
+                                    country-data="russia" placeholder-data="+7 ___ ___-__-__">
+                                    <input class="country-selector__radio-input" type="radio" name="country-reg"
+                                        checked>
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--russia">
+                                        Россия
+                                        <span class="country-selector__data">+7</span>
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{375} 00 000-00-00"
+                                    country-data="belarus" placeholder-data="+375 __ ___-__-__">
+                                    <input class="country-selector__radio-input" type="radio" name="country-reg">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--belarus">
+                                        Беларусь
+                                        <span class="country-selector__data">+375
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{380} 00 000 0000" country-data="ua"
+                                    placeholder-data="+380 __ ___ ____">
+                                    <input class="country-selector__radio-input" type="radio" name="country-reg">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--ua">Украина
+                                        <span class="country-selector__data">+380
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{7} 000 000 0000"
+                                    country-data="kazakhstan" placeholder-data="+7 ___ ___ ____">
+                                    <input class="country-selector__radio-input" type="radio" name="country-reg">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--kazakhstan">
+                                        Казахстан <span class="country-selector__data">+7</p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{998} 00 000 00 00"
+                                    country-data="uzbekistan" placeholder-data="+998 __ ___ __ __">
+                                    <input class="country-selector__radio-input" type="radio" name="country-reg">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--uzbekistan">
+                                        Узбекистан <span class="country-selector__data">+998</p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{373} 000 00 000"
+                                    country-data="moldova" placeholder-data="+373 ___ __ ___">
+                                    <input class="country-selector__radio-input" type="radio" name="country-reg">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--moldova">
+                                        Молдова
+                                        <span class="country-selector__data">+373
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{374} 00 000000"
+                                    country-data="armenia" placeholder-data="+374 __ ______">
+                                    <input class="country-selector__radio-input" type="radio" name="country-reg">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--armenia">
+                                        Армения
+                                        <span class="country-selector__data">+374
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="registration phone-confirmation disabled">
+                        <label class="registration__code-label confirmation-code">
+                            <input type="tel" name="confirmation-code" id="confirmation-code"
+                                class="registration__code-input registration__code-input--password"
+                                placeholder="Код подтверждения" autocomplete="new-password" maxlength="4">
+                            <div class="registration__input-button-wrapper">
+                                <button class="registration__input-button"></button>
+                            </div>
+                        </label>
+                        <p
+                            class="registration__confirm-code-alert registration__confirm-code-alert--wrong-code disabled">
+                            Неверный код</p>
+                    </section>
+                    <section class="registration password-registration disabled">
+                        <label class="registration__label registration__type-label email-input">
+                            <input type="text" name="reg-email-input" id="reg-email-input"
+                                class="registration__input registration__type-item-input registration__type-item-input--email"
+                                placeholder="Электронная почта" maxlength="50">
+                            <button
+                                class="registration__input-button registration__input-button--clear-input input-empty"></button>
+                        </label>
+                        <label class="registration__password-label reg-password">
+                            <input type="password" name="reg-password" id="reg-password"
+                                class="registration__password-input registration__password-input--password-main"
+                                placeholder="Придумайте пароль" autocomplete="new-password">
+                            <div class="registration__input-button-wrapper">
+                                <button class="registration__input-button registration__input-button--show-pw"></button>
+                            </div>
+                        </label>
+                        <label class="registration__password-label reg-password reg-password-repeat">
+                            <input type="password" name="reg-password-repeat" id="reg-password-repeat"
+                                class="registration__password-input registration__password-input--password-repeat"
+                                placeholder="Повторите пароль">
+                            <div class="registration__input-button-wrapper">
+                                <button class="registration__input-button registration__input-button--show-pw"></button>
+                            </div>
+                        </label>
+                        <div class="registration__password-prompt">
+                            <p class="registration__password-prompt-title">Требования к паролю:</p>
+                            <ul class="registration__password-prompt-list">
+                                <li class="registration__password-prompt-item">
+                                    8 и более символов
+                                </li>
+                                <li class="registration__password-prompt-item">
+                                    прописные и строчные буквы
+                                </li>
+                                <li class="registration__password-prompt-item">
+                                    хотя бы одна цифра
+                                </li>
+                                <li class="registration__password-prompt-item">
+                                    хотя бы один спец символ !@#$%^&*
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="registration__terms disabled">
+                            <p class="registration__terms-desc">
+                                Нажимая “Зарегистрироваться” вы принимаете <a href="#"
+                                    class="registration__terms-link">пользовательское соглашение</a> и даёте согласие
+                                на обработку вашей персональной информации на условиях <a href="#"
+                                    class="registration__terms-link">политики конфиденциальности</a>
+                            </p>
+                        </div>
+                    </section>
+                    <div class="registration__button-wrapper">
+                        <button
+                            class="basic-button registration__button registration__button--continue">Продолжить</button>
+                        <p
+                            class="registration__confirm-code-alert registration__confirm-code-alert--resend-timer disabled">
+                            Получить
+                            новый код через <span class="registration__code-resend-timer-data">00:59</span></p>
+                        <button class="registration__button-resend-code disabled">Отправить код повторно</button>
+                        <button
+                            class="basic-button registration__button registration__button--authication disabled">Зарегистрироваться</button>
+                    </div>
+                    <button class="registration-page__button-go-to-auth registration-page__button-go-to-auth--mobile">У
+                        меня есть аккаунт</button>
+                </div>
+            </section>
+            <section class="registration-restore-page__exist registration-exist-page disabled">
+                <div class="registration-exist-page__wrapper">
+                    <div class="registration-exist-page__logo-wrapper">
+                        <a href="#" class="registration-exist-page__navigation-link-go-back"></a>
+                        <a href="#" class="registration-page__navigation-link-main-page"><img
+                                src="./img/AT-Work-logo.svg" alt="" width="124" height="24"
+                                class="registration-page__logo"></a>
+                    </div>
+                    <h2 class="registration-exist-page__title account-exists">Аккаунт существует</h2>
+                    <div class="registration-exist__account-info-wrapper">
+                        <img class="registration-exist__account-avatar"
+                            src="https://www.meme-arsenal.com/memes/42302aa704d6b36a703b76ce8d82d4a4.jpg"
+                            alt="Фото аккаунта" width="50" height="50">
+                        <div class="registration-exist__info-wrapper">
+                            <p class="registration-exist__account-name">Дмитрий</p>
+                            <label class="registration-exist__type-label registration-exist__type-label">
+                                <input type="text" name="reg-exist-phone-input" id="reg-exist-phone-input"
+                                    class=" registration-exist__type-item-input registration-exist__type-item-input--phone registration__input-phone-mask"
+                                    placeholder="+7 ___ ___-__-__" disabled>
+                            </label>
+                        </div>
+                    </div>
+                    <section class="registration-exist password-registration-exist">
+                        <label class="registration-exist__password-label reg-exist-password">
+                            <input type="password" name="reg-exist-password" id="reg-exist-password"
+                                class="registration-exist__password-input registration-exist__password-input--password"
+                                placeholder="Введите пароль" autocomplete="new-password">
+                            <div class="registration-exist__input-button-wrapper">
+                                <button
+                                    class="registration-exist__input-button registration-exist__input-button--show-pw"></button>
+                            </div>
+                        </label>
+                        <p class="registration-exist__alert registration-exist__alert--wrong-pass disabled">Неправильный
+                            пароль
+                        </p>
+                        <p class="registration-exist__alert registration-exist__alert--incorrect-pass disabled">Пароль
+                            должен
+                            содержать минимум 8 символов
+                        </p>
+                        <button class="registration-exist__link-password-restore">Забыли
+                            пароль?</button>
+                    </section>
+                    <div class="registration-exist__button-wrapper">
+                        <button
+                            class="basic-button registration-exist__button registration-exist__button--enter">Войти</button>
+                    </div>
+                    <a href="index.html" class="registration-exist-page__button-go-to-support">Это не мой аккуант</a>
+                </div>
+            </section>
+            <section class="registration-restore-page__restore restore-page disabled">
+                <h2 class="visually-hidden">Страница восстановления пароля</h2>
+                <div class="restore-page__wrapper">
+                    <div class="restore-page__logo-wrapper">
+                        <a href="#" class="restore-page__navigation-link-go-back"></a>
+                        <a href="#" class="restore-page__navigation-link-main-page"><img src="./img/AT-Work-logo.svg"
+                                alt="" width="124" height="24" class="restore-page__logo"></a>
+                    </div>
+                    <div class="restore-page__title-wrapper">
+                        <h2 class="restore-page__title">Восстановление</h2>
+                        <p class="restore-page__desc">Пожалуйста, укажите номер телефона, который вы использовали для
+                            входа
+                            на сайт</p>
+                    </div>
+                    <section class="restore-account phone-registration phone-registration-wrapper d isabled">
+                        <label class="restore-account__type-label restore-account__type-label--phone">
+                            <button class="country-selector__button country-selector__button--russia"></button>
+                            <input type="tel" name="restore-phone-input"
+                                class="restore-account__type-item-input restore-account__type-item-input--phone"
+                                placeholder="+7 ___ ___-__-__">
+                        </label>
+                        <div class="phone-registration__country-selector-wrapper country-selector">
+                            <div class="country-selector__country-list">
+                                <label class="country-selector__item selected" mask-data="+{7} 000 000-00-00"
+                                    country-data="russia" placeholder-data="+7 ___ ___-__-__">
+                                    <input class="country-selector__radio-input" type="radio" name="country-restore"
+                                        checked>
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--russia">
+                                        Россия
+                                        <span class="country-selector__data">+7</span>
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{375} 00 000-00-00"
+                                    country-data="belarus" placeholder-data="+375 __ ___-__-__">
+                                    <input class="country-selector__radio-input" type="radio" name="country-restore">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--belarus">
+                                        Беларусь
+                                        <span class="country-selector__data">+375
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{380} 00 000 0000" country-data="ua"
+                                    placeholder-data="+380 __ ___ ____">
+                                    <input class="country-selector__radio-input" type="radio" name="country-restore">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--ua">Украина
+                                        <span class="country-selector__data">+380
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{7} 000 000 0000"
+                                    country-data="kazakhstan" placeholder-data="+7 ___ ___ ____">
+                                    <input class="country-selector__radio-input" type="radio" name="country-restore">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--kazakhstan">
+                                        Казахстан <span class="country-selector__data">+7</p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{998} 00 000 00 00"
+                                    country-data="uzbekistan" placeholder-data="+998 __ ___ __ __">
+                                    <input class="country-selector__radio-input" type="radio" name="country-restore">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--uzbekistan">
+                                        Узбекистан <span class="country-selector__data">+998</p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{373} 000 00 000"
+                                    country-data="moldova" placeholder-data="+373 ___ __ ___">
+                                    <input class="country-selector__radio-input" type="radio" name="country-restore">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--moldova">
+                                        Молдова
+                                        <span class="country-selector__data">+373
+                                    </p>
+                                </label>
+                                <label class="country-selector__item" mask-data="+{374} 00 000000"
+                                    country-data="armenia" placeholder-data="+374 __ ______">
+                                    <input class="country-selector__radio-input" type="radio" name="country-restore">
+                                    <span class="country-selector__radio-icon"></span>
+                                    <p class="country-selector__description country-selector__description--armenia">
+                                        Армения
+                                        <span class="country-selector__data">+374
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="restore-account phone-confirmation disabled">
+                        <label class="restore-account__code-label confirmation-code">
+                            <input type="tel" name="confirmation-code"
+                                class="restore-account__code-input restore-account__code-input--password"
+                                placeholder="Код подтверждения" autocomplete="new-password" maxlength="4">
+                        </label>
+                        <p
+                            class="restore-account__confirm-code-alert restore-account__confirm-code-alert--wrong-code disabled">
+                            Неверный код</p>
+                    </section>
+                    <div class="restore-account__button-wrapper">
+                        <button
+                            class="basic-button restore-account__button restore-account__button--continue">Далее</button>
+                        <p
+                            class="restore-account__confirm-code-alert restore-account__confirm-code-alert--resend-timer disabled">
+                            Получить
+                            новый код через <span class="restore-account__code-resend-timer-data">00:59</span></p>
+                        <button class="restore-account__button-resend-code disabled">Отправить код повторно</button>
+                        <button
+                            class="basic-button restore-account__button restore-account__button--authication disabled">Подтвердить</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer class="authorization-footer">
+            <div class="authorization-footer__wrapper">
+                <a class="authorization-footer__desc authorization-footer__link" href="#"
+                    target="_blank">Пользовательское соглашение</a>
+                <a class="authorization-footer__desc authorization-footer__link" href="#"
+                    target="_blank">Конфиденциальность</a>
+                <p class="authorization-footer__desc authorization-footer__copyrights">© 2022, at-work</p>
+            </div>
+        </footer>
+    </main>
+    <footer class="authorization-footer authorization-footer--reg-restore disabled">
+        <div class="authorization-footer__wrapper">
+            <p class="authorization-footer__copyrights">© 2022, at-work</p>
+            <div class="authorization-footer__link-wrapper">
+                <a class="authorization-footer__link" href="#" target="_blank">Пользовательское соглашение</a>
+                <a class="authorization-footer__link" href="#" target="_blank">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+    <div class="popup">
+        <div class="overlay"> </div>
+        <div class="registration-page__success-popup disabled auth-success-banner disabled">
+            <div class="registration-page__success-wrapper">
+                <img class="registration-page__succes-logo" src="./img/reg-success-plug.png" alt="" width="198"
+                    height="228">
+                <h3 class="registration-page__title-success">Ура! Успешный вход</h3>
+                <p class="registration-page__desc-success">Через несколько секунд Вы будуте переведены на главную
+                    страницу</p>
+                <a href="index.html"
+                    class="basic-button registration__button registration__button--popup-auth registration__button--button-go-to-main">На
+                    главную</a>
+            </div>
+        </div>
+        <div class="registration-page__success-popup disabled reg-success-banner disabled">
+            <div class="registration-page__success-wrapper">
+                <img class="registration-page__success-logo" src="./img/reg-success-plug.png" alt="" width="198"
+                    height="228">
+                <h3 class="registration-page__title-success">Ура! Аккаунт активирован</h3>
+                <p class="registration-page__desc-success">Теперь вы можете настроить ваше рабочее пространство или
+                    сразу перейти к делу</p>
+                <a href="index.html"
+                    class="basic-button registration__button registration__button--popup-reg registration__button--button-go-to-main">На
+                    главную</a>
+            </div>
+        </div>
+        <div class="registration-page__success-popup restore-success-banner disabled">
+            <div class="registration-page__success-wrapper">
+                <img class="registration-page__succes-logo" src="./img/reg-success-plug.png" alt="" width="198"
+                    height="228">
+                <h3 class="registration-page__title-success">Ура! Аккаунт успешно восстановлен</h3>
+                <p class="registration-page__desc-success">На Ваш номер отпрален временный пароль для входа</p>
+                <a href="index.html"
+                    class="basic-button registration__button registration__button--popup-restore registration__button--button-go-to-main">На
+                    главную</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script type="module" src="js/script.js"></script>
+    <script src="js/swiped-events.min.js"></script>
+
+    <!-- <script src="https://unpkg.com/imask"></script> -->
+    <script src="js/maskInput.js"></script>
+
+</body>
+
+</html>

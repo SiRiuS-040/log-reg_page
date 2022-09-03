@@ -1,0 +1,90 @@
+.registration-exist-page {
+    @media (min-width: $tablet-width) {
+        margin-top: 0;
+    }
+}
+
+.registration-exist-page__logo-wrapper {
+    align-items: center;
+}
+
+.registration-exist-page__title {
+    margin-top: 60px;
+
+    font-size: var(--text-22);
+    line-height: var(--lh-28);
+    font-weight: var(--fw-500);
+    color: var(--gray-900);
+
+    @media (min-width: $tablet-width) {
+        margin-top: 0;
+        margin-left: 48px;
+    }
+}
+
+.registration-exist-page__navigation-link-go-back {
+    top: calc(10px);
+
+    @media (min-width: $tablet-width) {
+        top: calc(50% - 12px);
+        top: 2px;
+    }
+}
+
+.registration-exist__account-info-wrapper {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-column-gap: 16px;
+    margin-top: 28px;
+}
+
+.registration-exist__account-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.registration-exist__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registration-exist__account-name {
+    font-size: var(--text-16);
+    line-height: var(--lh-22);
+    font-weight: var(--fw-500);
+    color: var(--gray-1000);
+
+    @media (min-width: $tablet-width) {
+        font-size: var(--text-12);
+        line-height: var(--lh-14);
+        font-weight: var(--fw-500);
+    }
+}
+
+.registration-exist__type-item-input {
+    font-size: var(--text-14);
+    line-height: var(--lh-20);
+    font-weight: var(--fw-400);
+    color: var(--gray-850);
+    background-color: transparent;
+
+    @media (min-width: $tablet-width) {
+        font-size: var(--text-12);
+        line-height: var(--lh-14);
+        font-weight: var(--fw-400);
+    }
+}
+
+.registration-exist__button {
+    &--enter {
+        margin-bottom: 28px;
+    }
+}
+
+.registration-exist-page__button-go-to-support {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
